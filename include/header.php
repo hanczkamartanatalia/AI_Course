@@ -64,15 +64,15 @@
                                                 <li><a href="about.php">About</a></li>
                                                 <li><a href="#">Blog</a>
                                                     <ul class="submenu">
-                                                        <li><a href="Inne/blog.html">Blog</a></li>
-                                                        <li><a href="Inne/blog_details.html">Blog Details</a></li>
-                                                        <li><a href="Inne/elements.html">Element</a></li>
+                                                        <li><a href="Inne/blog.php">Blog</a></li>
+                                                        <li><a href="Inne/blog_details.php">Blog Details</a></li>
+                                                        <li><a href="Inne/elements.php">Element</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a href="contact.php">Contact</a></li>
                                                 <!-- Button -->
-                                                <li class="button-header margin-left "><a href="Inne/register.html" class="btn">Join</a></li>
-                                                <li class="button-header"><a href="Inne/login.html" class="btn btn3">Log in</a></li>
+                                                <li class="button-header margin-left "><a href="user/register.php" class="btn">Join</a></li>
+                                                <li class="button-header"><a href="user/login.php" class="btn btn3">Log in</a></li>
                                             </ul>
                                         </nav>
                                     </div>

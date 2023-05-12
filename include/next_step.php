@@ -16,7 +16,7 @@
                                 and professional goals
                             with us.</h2>
                             <p>The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.</p>
-                            <a href="Inne/register.html" class="btn">Join now for Free</a>
+                            <a href="Inne/register.php" class="btn">Join now for Free</a>
                         </div>
                     </div>
                 </div>
