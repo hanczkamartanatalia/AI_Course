@@ -44,7 +44,7 @@
 
 <main class="login-body" data-vide-bg="../assets/img/login-bg.mp4">
     <!-- Login Admin -->
-    <form class="form-default" action="../fun/login-bg.php" method="POST">
+    <form class="form-default" action="../lib/register-bg.php" method="POST">
         
         <div class="login-form">
             <!-- logo-login -->
@@ -58,6 +58,14 @@
                 <input  type="text" name="name" placeholder="Full name">
             </div>
             <div class="form-input">
+                <label for="name">Last name</label>
+                <input  type="text" name="lastname" placeholder="Last name">
+            </div>
+            <div class="form-input">
+                <label for="name">Login</label>
+                <input  type="text" name="login" placeholder="Full name">
+            </div>
+            <div class="form-input">
                 <label for="name">Email Address</label>
                 <input type="email" name="email" placeholder="Email Address">
             </div>
@@ -67,7 +75,7 @@
             </div>
             <div class="form-input">
                 <label for="name">Confirm Password</label>
-                <input type="password" name="password" placeholder="Confirm Password">
+                <input type="password" name="passwordConfirm" placeholder="Confirm Password">
             </div>
             <div class="form-input pt-30">
                 <input type="submit" name="submit" value="Registration">

@@ -42,7 +42,7 @@
 
     <main class="login-body" data-vide-bg="../assets/img/login-bg.mp4">
         <!-- Login Admin -->
-        <form class="form-default" action="../fun/login-bg.php" method="POST">
+        <form class="form-default" action="../lib/login-bg.php" method="POST">
             
             <div class="login-form">
                 <!-- logo-login -->
@@ -51,8 +51,8 @@
                 </div>
                 <h2>Login Here</h2>
                 <div class="form-input">
-                    <label for="name">Email</label>
-                    <input  type="email" name="email" placeholder="Email">
+                    <label for="name">login</label>
+                    <input  type="text" name="login" placeholder="Login">
                 </div>
                 <div class="form-input">
                     <label for="name">Password</label>
