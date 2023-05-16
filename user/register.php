@@ -44,7 +44,7 @@
 
 <main class="login-body" data-vide-bg="../assets/img/login-bg.mp4">
     <!-- Login Admin -->
-    <form class="form-default" action="../lib/register-bg.php" method="POST">
+    <form class="form-default" action="../lib/register-validate.php" method="POST">
         
         <div class="login-form">
             <!-- logo-login -->
@@ -55,27 +55,27 @@
 
             <div class="form-input">
                 <label for="name">Full name</label>
-                <input  type="text" name="name" placeholder="Full name">
+                <input  type="text" name="name" placeholder="Full name" required>
             </div>
             <div class="form-input">
                 <label for="name">Last name</label>
-                <input  type="text" name="lastname" placeholder="Last name">
+                <input  type="text" name="lastname" placeholder="Last name" required>
             </div>
             <div class="form-input">
                 <label for="name">Login</label>
-                <input  type="text" name="login" placeholder="Full name">
+                <input  type="text" name="login" placeholder="Full name" required>
             </div>
             <div class="form-input">
                 <label for="name">Email Address</label>
-                <input type="email" name="email" placeholder="Email Address">
+                <input type="email" name="email" placeholder="Email Address" required> 
             </div>
             <div class="form-input">
                 <label for="name">Password</label>
-                <input type="password" name="password" placeholder="Password">
+                <input type="password" name="password" placeholder="Password" required>
             </div>
             <div class="form-input">
                 <label for="name">Confirm Password</label>
-                <input type="password" name="passwordConfirm" placeholder="Confirm Password">
+                <input type="password" name="passwordConfirm" placeholder="Confirm Password" required>
             </div>
             <div class="form-input pt-30">
                 <input type="submit" name="submit" value="Registration">

@@ -9,22 +9,13 @@ error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT & ~E_NOTICE);
 
 //-------------------------LOGIN DATA--------------------------------------------//
 
-$name = $_POST['name'];
-$lastname = $_POST['lastname'];
+$name = $_SESSION['name'];
+$lastname = $_SESSION['lastname'];
 
-$email = $_POST['email'];
-$password = $_POST['password'];
+$email = $_SESSION['email'];
+$password = $_SESSION['password'];
 
-$passwordConfirm = $_POST['passwordConfirm'];
-$login = $_POST['login'];
-
-//-------------------------Check password with confirm password------------------//
-
-if($password != $passwordConfirm)
-{
-    header('Location: ../user/register.php');
-    exit();
-}
+$login = $_SESSION['login'];
 
 //-------------------------FILES-------------------------------------------------//
 

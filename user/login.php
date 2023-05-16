@@ -52,11 +52,11 @@
                 <h2>Login Here</h2>
                 <div class="form-input">
                     <label for="name">login</label>
-                    <input  type="text" name="login" placeholder="Login">
+                    <input  type="text" name="login" placeholder="Login" required >
                 </div>
                 <div class="form-input">
                     <label for="name">Password</label>
-                    <input type="password" name="password" placeholder="Password">
+                    <input type="password" name="password" placeholder="Password" required>
                 </div>
                 <div class="form-input pt-30">
                     <input type="submit" name="submit" value="login">
