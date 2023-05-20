@@ -1,10 +1,7 @@
 <?php
 
 /* TODO
-function
-x - user dont find 
-- incorrent password
-- user or admin
+- hashowanie hasła
 */
 
 
@@ -31,7 +28,7 @@ function verify_password($listDataOfAccount, $connect, $password)
 
     if($passDB !== $pass)
     {
-        throw new Exception ("Incorrect login or password.PassDB = '$passDB', Password = '$password' ");
+        throw new Exception ("Incorrect login or password.");
     }
 }
 
@@ -50,7 +47,7 @@ function isAdmin($listDataOfAccount)
 
     if($isAdmin == 0)
     {
-        header('Location: ../user/account.php');
+        header('Location: ../account.php');
     }
     else 
     {

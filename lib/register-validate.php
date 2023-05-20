@@ -9,7 +9,7 @@ error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT & ~E_NOTICE);
 //-------------------------FILES------------------------------------------------//
 
 require_once("register-validate.php");
-require_once("validate-fn.php");
+require_once("register-fn.php");
 
 
 //-------------------------SESSION-----------------------------------------------//

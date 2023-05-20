@@ -77,12 +77,54 @@ function validate_login($login)
 
     $result = $connect->query($sql);
 
-    //$connect.close();
-
     if($result->num_rows !=0)
     {
         throw new Exception ("Invalid login. Login $login is not unique.");
     }
+}
+
+function add_login_to_data_base($connect)
+{
+    session_start();
+    $login = $_SESSION['login'];
+    $password = $_SESSION['password'];
+    
+    //add
+    $sql = "INSERT INTO `Login`(`login`, `login_Password`) VALUES ('$login', '$password')";
+    $connect -> query($sql);
+         
+    //find
+    $sql = "SELECT * FROM `Login` WHERE login = '$login'";
+    $result = $connect -> query($sql);
+
+    if($result)
+    {
+        return $listDataOfAccount = $result->fetch_assoc();
+    }
+    else
+    {
+        throw new Exception("Something went wrong. Try again latter.");
+    }   
+}
+
+function add_user_to_database($connect,$id_fk)
+{
+    session_start();
+
+    $name = $_SESSION['name'];
+    $lastname = $_SESSION['lastname'];
+    $email = $_SESSION['email'];
+    
+    $sql = "INSERT INTO `Application_user`(`Name`, `Last_name`, `Email`,`id_login_FK`) 
+    VALUES ('$name','$lastname','$email','$id_fk')";
+
+    $result = $connect -> query($sql);
+
+    if(!$result)
+    {
+        throw new Exception("Something went wrong. Try again latter.");
+    }
+
 }
 
 ?>

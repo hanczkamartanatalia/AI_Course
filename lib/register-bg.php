@@ -1,26 +1,21 @@
 <?php
 
+/* TODO
+- hashowanie hasła
+*/
+
 session_start();
 
-//-------------------------DEV---------------------------------------------------//
-
-ini_set('display_errors', 'On');
-error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT & ~E_NOTICE);
-
-//-------------------------LOGIN DATA--------------------------------------------//
-
-$name = $_SESSION['name'];
-$lastname = $_SESSION['lastname'];
-
-$email = $_SESSION['email'];
-$password = $_SESSION['password'];
-
-$login = $_SESSION['login'];
 
 //-------------------------FILES-------------------------------------------------//
 
 require_once "../config/connect.php";
-require_once "sql-bg.php";
+require_once "../config/config.php";
+require_once "register-fn.php";
+
+//-------------------------DEV---------------------------------------------------//
+
+displayErrors();
 
 //-------------------------CONNECT-----------------------------------------------//
 
@@ -28,41 +23,21 @@ $connect = connectToDataBase();
 
 //-------------------------SQL---------------------------------------------------//
 
-$sql = "INSERT INTO `Login`(`login`, `login_Password`) VALUES ('$login', '$password')";
-
-if ($connect -> query($sql)) 
+try
 {
-    echo "New record created successfully";
-}
- else 
-{
-    header('Location: register.php'); 
-}
-
-$sql = "SELECT * FROM `Login` WHERE login = '$login'";
-
-$result = $connect -> query($sql);
-
-if($result)
-{
-    $listDataOfAccount = $result->fetch_assoc();
+    $listDataOfAccount = add_login_to_data_base($connect);
     $id_fk = $listDataOfAccount['id_login'];
-}
-else
+
+    add_user_to_database($connect, $id_fk);
+    header("Location: ../account.php'");
+} 
+catch(Exception $ex)
 {
-    echo 'Error';
+    $_SESSION['error'] = $ex->getMessage();
 }
-
-$sql = "INSERT INTO `Application_user`(`Name`, `Last_name`, `Email`,`id_login_FK`) VALUES ('$name','$lastname','$email','$id_fk')";
-
-$result = $connect -> query($sql);
-
-if($result)
+finally
 {
-    echo 'Created accaunt correct.';
+    $connect->close();
 }
 
-
- //$result->free();
- $connect->close();
-  ?>
+?>

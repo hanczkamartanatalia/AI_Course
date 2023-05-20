@@ -5,7 +5,7 @@ session_start();
 //-------------------------FILES-------------------------------------------------//
 
 require_once "../config/connect.php";
-require_once "sql-bg.php";
+require_once "../config/config.php";
 require_once "login-fn.php";
 
 

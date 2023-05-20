@@ -34,6 +34,8 @@ if(isset($_SESSION['login']) && $_SESSION['login'])
 	<link rel="stylesheet" href="../assets/css/slick.css">
 	<link rel="stylesheet" href="../assets/css/nice-select.css">
 	<link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/bg-image.css">
+    <link rel="stylesheet" href="assets/css/inccorect-date.css">
 </head>
 <body>
     <!-- ? Preloader Start -->
@@ -60,8 +62,8 @@ if(isset($_SESSION['login']) && $_SESSION['login'])
                     <a href="../index.php"><img src="../assets/img/logo/loder.png" alt=""></a>
                 </div>
                 <h2>Login Here</h2>
-                <div class="form-input is-invalid">
-                    <span class="help-block"><?php session_start(); echo $_SESSION['error'];$_SESSION['error']="";?></span>
+                <div class="form-input">
+                    <span class="inccorect-date"><?php session_start(); echo $_SESSION['error'];$_SESSION['error']="";?></span>
                 </div>
                 <div class="form-input">
                     <label for="name">login</label>
@@ -94,7 +96,7 @@ if(isset($_SESSION['login']) && $_SESSION['login'])
     <script src="../assets/js/jquery.slicknav.min.js"></script>
 
     <!-- Video bg -->
-    <script src="../assets/js/jquery.vide.js"></script>
+    <!--script src="../assets/js/jquery.vide.js"></script-->
 
     <!-- Jquery Slick , Owl-Carousel Plugins -->
     <script src="../assets/js/owl.carousel.min.js"></script>
