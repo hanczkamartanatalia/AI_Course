@@ -29,7 +29,7 @@ try
     $id_fk = $listDataOfAccount['id_login'];
 
     add_user_to_database($connect, $id_fk);
-    header("Location: ../account.php'");
+    header("Location: ../user/account.php'");
 } 
 catch(Exception $ex)
 {

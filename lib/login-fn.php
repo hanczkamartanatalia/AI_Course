@@ -47,7 +47,7 @@ function isAdmin($listDataOfAccount)
 
     if($isAdmin == 0)
     {
-        header('Location: ../account.php');
+        header('Location: ../user/account.php');
     }
     else 
     {
