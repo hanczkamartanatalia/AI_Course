@@ -1,3 +1,13 @@
+<?php
+
+if(isset($_SESSION['login']) && $_SESSION['login'])
+{
+    header('Location: ../user/account.php'); 
+}
+
+?>
+
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>
@@ -50,13 +60,16 @@
                     <a href="../index.php"><img src="../assets/img/logo/loder.png" alt=""></a>
                 </div>
                 <h2>Login Here</h2>
+                <div class="form-input is-invalid">
+                    <span class="help-block"><?php session_start(); echo $_SESSION['error'];$_SESSION['error']="";?></span>
+                </div>
                 <div class="form-input">
                     <label for="name">login</label>
-                    <input  type="text" name="login" placeholder="Login" required >
+                    <input  type="text" name="login" placeholder="Login" required value = <?php session_start(); echo $_SESSION['login'];?>>
                 </div>
                 <div class="form-input">
                     <label for="name">Password</label>
-                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="password" name="password" placeholder="Password" required value = <?php session_start(); echo $_SESSION['password'];?>> 
                 </div>
                 <div class="form-input pt-30">
                     <input type="submit" name="submit" value="login">

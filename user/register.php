@@ -1,5 +1,7 @@
+
+
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="pl-PL">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -52,22 +54,24 @@
                 <a href="../index.php"><img src="../assets/img/logo/loder.png" alt=""></a>
             </div>
             <h2>Registration Here</h2>
-
+            <div class="form-input is-invalid">
+                <span class="help-block"><?php session_start(); echo $_SESSION['error'];$_SESSION['error']="";?></span>
+            </div>
             <div class="form-input">
                 <label for="name">Full name</label>
-                <input  type="text" name="name" placeholder="Full name" required>
+                <input  type="text" name="name" placeholder="Full name" required value = <?php session_start(); echo $_SESSION['name'];?>>
             </div>
             <div class="form-input">
                 <label for="name">Last name</label>
-                <input  type="text" name="lastname" placeholder="Last name" required>
+                <input  type="text" name="lastname" placeholder="Last name" required value = <?php session_start(); echo $_SESSION['lastname'];?>>
             </div>
             <div class="form-input">
                 <label for="name">Login</label>
-                <input  type="text" name="login" placeholder="Full name" required>
+                <input  type="text" name="login" placeholder="Login" required value = <?php session_start(); echo $_SESSION['login'];?>>
             </div>
             <div class="form-input">
                 <label for="name">Email Address</label>
-                <input type="email" name="email" placeholder="Email Address" required> 
+                <input type="email" name="email" placeholder="Email Address" required value = <?php session_start(); echo $_SESSION['email'];?>> 
             </div>
             <div class="form-input">
                 <label for="name">Password</label>

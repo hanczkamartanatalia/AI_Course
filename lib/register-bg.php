@@ -28,9 +28,9 @@ $connect = connectToDataBase();
 
 //-------------------------SQL---------------------------------------------------//
 
-$sqlLogin = "INSERT INTO `Login`(`login`, `login_Password`) VALUES ('$login', '$password')";
+$sql = "INSERT INTO `Login`(`login`, `login_Password`) VALUES ('$login', '$password')";
 
-if ($connect -> query($sqlLogin) === TRUE) 
+if ($connect -> query($sql)) 
 {
     echo "New record created successfully";
 }
@@ -63,6 +63,6 @@ if($result)
 }
 
 
- $result->free();
+ //$result->free();
  $connect->close();
   ?>

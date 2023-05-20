@@ -6,19 +6,10 @@ ini_set('display_errors', 'On');
 error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT & ~E_NOTICE);
 
 
-//-------------------------Screen next step-------------------------------------//
-if($count_error>0){
-    echo "<div class='container py-5'>\n";
-    for($e = 0; $e < $count_error; $e++){
-        echo "<p class='alert alert-warning'>".$error[$e]."</p>\n";
-    }
-    echo "</div>\n";
-} 
-else{
-    if(file_exists("./include/next_step.php"))include("./include/next_step.php");
-}
+//-------------------------FILES------------------------------------------------//
 
 require_once("register-validate.php");
+require_once("validate-fn.php");
 
 
 //-------------------------SESSION-----------------------------------------------//
@@ -36,33 +27,35 @@ $password = $_POST['password'];
 $password_Confirm = $_POST['passwordConfirm'];
 $login = $_POST['login'];
 
-//-------------------------Check 'password' with 'confirm password'------------------//
-
-
-
-
-//-------------------------Validate name-------------------------------------------//
+//-------------------------Validate values-------------------------------------------//
 
 try
 {
-    validate_email($email);
-    validate_last_name($lastname);
     validate_name($name);
-    validate_password($password,$password_Confirm);
+    $_SESSION['name'] = $name;
+
+    validate_last_name($lastname);
+    $_SESSION['lastname'] = $lastname;
+
     validate_login($login);
+    $_SESSION['login'] = $login;
+
+    validate_email($email);
+    $_SESSION['email'] = $email;
+    
+    
+    validate_password($password,$password_Confirm);
+    $_SESSION['password'] = $password;   
+    
+    
+    $_SESSION['error'] ="";
+    header('Location: register-bg.php');
+
 }
-catch(Exception)
+catch(Exception $ex)
 {
- 
+    $_SESSION['error'] = $ex->getMessage();
+    header('Location: ../user/register.php');
 }
-
-
-$_SESSION['name'] = $name;
-$_SESSION['lastname'] = $lastname;
-
-$_SESSION['email'] = $email;
-$_SESSION['password'] = $password;
-
-$_SESSION['login'] = $login;
 
 ?>
