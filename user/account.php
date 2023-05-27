@@ -1,30 +1,126 @@
 <?php
 
-if(file_exists("include/header.php")) include("include/header.php");
+session_start();
+$_SESSION['location'] = '../';
 
-if($count_error>0){
-    echo "<div class='container py-5'>\n";
-    for($e = 0; $e < $count_error; $e++){
-        echo "<p class='alert alert-warning'>".$error[$e]."</p>\n";
-    }
-    echo "</div>\n";
-} 
-else {
-    if(file_exists("include/about.php"))include("include/about.php");
-    if(file_exists("include/services.php"))include("include/services.php");
-    if(file_exists("include/learn.php"))include("include/learn.php");
-    if(file_exists("include/top.php"))include("include/top.php");
-    if(file_exists("include/info.php"))include("include/info.php");
-    if(file_exists("include/team.php"))include("include/team.php");
-}
+if(file_exists("../lib/is_login.php"))include("../lib/is_login.php"); 
+if(file_exists("../include/logIN_top.php")) include("../include/logIN_top.php");
+if(file_exists("../include/footer.php")) include("../include/footer.php");
 
-if(file_exists("include/footer.php")) include("include/footer.php");
-
-//  if($_GET[w]=="wynik") {
-//     include("wynik.php");
-//  } else {
-//     include("middle.php");
-//  }
-
-//  include("footer.php")
 ?>
+<!-- <div class="topic-area section-padding40">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-7 col-lg-8">
+                        <div class="section-tittle text-center mb-55">
+                            <h2>Explore top subjects</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-topic text-center mb-30">
+                            <div class="topic-img">
+                                <img src="../assets/img/gallery/topic1.png" alt="">
+                                <div class="topic-content-box">
+                                    <div class="topic-content">
+                                        <h3><a href="#">Programing</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-topic text-center mb-30">
+                            <div class="topic-img">
+                                <img src="../assets/img/gallery/topic2.png" alt="">
+                                <div class="topic-content-box">
+                                    <div class="topic-content">
+                                        <h3><a href="#">Programing</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-topic text-center mb-30">
+                            <div class="topic-img">
+                                <img src="../assets/img/gallery/topic3.png" alt="">
+                                <div class="topic-content-box">
+                                    <div class="topic-content">
+                                        <h3><a href="#">Programing</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-topic text-center mb-30">
+                            <div class="topic-img">
+                                <img src="../assets/img/gallery/topic4.png" alt="">
+                                <div class="topic-content-box">
+                                    <div class="topic-content">
+                                        <h3><a href="#">Programing</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-topic text-center mb-30">
+                            <div class="topic-img">
+                                <img src="../assets/img/gallery/topic5.png" alt="">
+                                <div class="topic-content-box">
+                                    <div class="topic-content">
+                                        <h3><a href="#">Programing</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-topic text-center mb-30">
+                            <div class="topic-img">
+                                <img src="../assets/img/gallery/topic6.png" alt="">
+                                <div class="topic-content-box">
+                                    <div class="topic-content">
+                                        <h3><a href="#">Programing</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-topic text-center mb-30">
+                            <div class="topic-img">
+                                <img src="../assets/img/gallery/topic7.png" alt="">
+                                <div class="topic-content-box">
+                                    <div class="topic-content">
+                                        <h3><a href="#">Programing</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-topic text-center mb-30">
+                            <div class="topic-img">
+                                <img src="../assets/img/gallery/topic8.png" alt="">
+                                <div class="topic-content-box">
+                                    <div class="topic-content">
+                                        <h3><a href="#">Programing</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-xl-12">
+                        <div class="section-tittle text-center mt-20">
+                            <a href="courses.php" class="border-btn">View More Subjects</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
